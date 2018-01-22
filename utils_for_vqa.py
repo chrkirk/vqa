@@ -64,8 +64,7 @@ def split_vid_into_chunks(videofile, chunk_size=10):
 
     print("Completed spliting {} into {} chunks each of {}secs duration.".format(videofile, i, chunk_size))
 
-def run_tests():
-	vid = "incredibles.mp4"
+def run_tests(ref_vid):
 	vid_info = {'duration': vid_duration(vid),
 				'bitrate' : vid_bitrate(vid),
 				'size'    : vid_size(vid),
@@ -73,7 +72,6 @@ def run_tests():
 				'height'  : vid_height(vid)}
 	print("Completed video info tests {}".format(vid_info))
 
-	ref_file = "incredibles.mp4"
 	convert_resolution(ref_file, 426, 240, "temp.mp4")
 	print("Completed convert_resolution test ... removing output file")
 	run_command("rm temp.mp4")

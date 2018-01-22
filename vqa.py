@@ -102,15 +102,3 @@ def run_psnr(ref_path, dis_path, width, height, fmt, pool_method=None):
     else: # None or 'mean'
         pass
     return result.result_dict
-
-
-
-
-#########################################################################3
-ref_path = "incredibles.mp4"
-dis_path = "incredibles_360p.mp4"
-width    = 1280
-height   = 720
-fmt      = "yuv420p"
-res_vmaf = run_vmaf(ref_path, dis_path, width, height, fmt)
-res_psnr = run_psnr(ref_path, dis_path, width, height, fmt)
