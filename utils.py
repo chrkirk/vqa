@@ -28,6 +28,8 @@ def vid_height(filename):
     return int( ffprobe(filename)["streams"][0]["height"] )
 
 def convert_resolution(input_videofile, width, height, output_videofile):
+    # if you want to keep the aspect ratio specify only one component, width or heigth,
+    # and set the other to -1
     run_command("ffmpeg           \
                 -i {input}        \
                 -vf scale={w}:{h} \
